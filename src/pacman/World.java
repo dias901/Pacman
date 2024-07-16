@@ -17,12 +17,7 @@ public class World {
 	}
 	
 	public void mapa(int x, int y,int z) {
-		if(z==1 || z==2) {
 			bloco.add(new Block(x,y,45,45,z));
-		}else {
-			bloco.add(new Block(x,y,135,90,z));
-		}
-		
 	}
 	
 	public Position pose(int x, int y) {
@@ -82,7 +77,7 @@ public class World {
 		for(int q=0;q<15;q++) {
 			for(int i=0;i<15;i++) {
 				boolean question = tile(vetor[i],vetor[q]);
-					if(question){mapa(vetor[i],vetor[q],3);}else {mapa(vetor[i],vetor[q],1);}}}
+					if(question){mapa(vetor[i],vetor[q],2);}else {mapa(vetor[i],vetor[q],1);}}}
 	}
 	
 	public void render(Graphics g) {

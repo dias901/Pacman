@@ -21,10 +21,6 @@ public class Block extends Rectangle{
 		}
 		
 		if(z==2) {
-			g.drawImage(Spritesheet.barreira, x, y, 135, 90, null);
-		}
-		
-		if(z==3) {
 			g.drawImage(Spritesheet.tile,x,y,45,45,null);
 		}
 	}
