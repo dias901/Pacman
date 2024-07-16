@@ -19,7 +19,7 @@ public class Spritesheet {
 			background = ImageIO.read(getClass().getResource("/background.png"));
 			parede = ImageIO.read(getClass().getResource("/parede.png"));
 			barreira = ImageIO.read(getClass().getResource("/barreira.png"));
-			tile = ImageIO.read(getClass().getResource("/tile.png"));
+			tile = ImageIO.read(getClass().getResource("/Tile.png"));
 			
 			player_right = new BufferedImage[2];
 			player_right[0] = ImageIO.read(getClass().getResource("/pacman1.png"));
