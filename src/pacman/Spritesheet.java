@@ -26,7 +26,7 @@ public class Spritesheet {
 			player_left[1] = ImageIO.read(getClass().getResource("/pacman3.png"));
 			
 		} catch (IOException e) {
-			System.out.println("A imagem não foi encontrada!");
+			e.printStackTrace();
 		}
 	}
 }
