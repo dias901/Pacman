@@ -12,29 +12,37 @@ public class Player extends Rectangle{
 	public int frame_right=0, target_right=10;
 	public int frame_left=0, target_left=10;
 	public int dir=1;
+	public Position player_position;
 	
 	public Player(int x, int y) {
 		super(x,y,45,45);
 	}
 	
-	public void range() {
-		
+	public Position range(int a, int b) {
+		Position p = new Position(a,b);
+		if(right) {
+			a+=45;
+		}
+		if(left) {
+			a-=45;
+		}
+		if(up) {
+			b-=45;
+		}
+		if(down) {
+			b+=45;
+		}
+		boolean question = World.tile(a, b);
+		if(question) {
+		p = new Position(a,b);
+		}
+		return p;
 	}
 	
 	public void movimento() {
-		if(right) {
-			x+=spd;
-		}
-		if(left) {
-			x-=spd;
-		}
-		if(up) {
-			y-=spd;
-		}
-		if(down) {
-			y+=spd;
-		}
-		
+		Position pp = range(x,y);
+		x=pp.x;
+		y=pp.y;
 	}
 	
 	public void anima() {

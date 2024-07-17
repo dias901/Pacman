@@ -9,8 +9,8 @@ public class World {
 	
 	public static List<Block> bloco = new ArrayList<>();
 	int[] vetor = {0,45,90,135,180,225,270,315,360,405,450,495,540,585,630};
-	Position[] pos = new Position[]{pose(90,0),pose(540,0),pose(0,90),pose(0,540),pose(90,630),pose(540,630),pose(630,540),pose(630,90)};
-	public List<Position> pos1 = new ArrayList<>(Arrays.asList(pos));
+	public static Position[] pos = new Position[]{pose(90,0),pose(540,0),pose(0,90),pose(0,540),pose(90,630),pose(540,630),pose(630,540),pose(630,90)};
+	public static List<Position> pos1 = new ArrayList<>(Arrays.asList(pos));
 	
 	public World() {
 				inicializar();
@@ -20,7 +20,7 @@ public class World {
 			bloco.add(new Block(x,y,45,45,z));
 	}
 	
-	public Position pose(int x, int y) {
+	public static Position pose(int x, int y) {
 		return new Position(x,y);
 	}
 	
@@ -59,7 +59,7 @@ public class World {
 		
 	}
 		
-	public boolean tile(int x, int y) {
+	public static boolean tile(int x, int y) {
 		String cc = pose(x,y).toString();
 		boolean question=false;
 		for(Position z: pos1) {
