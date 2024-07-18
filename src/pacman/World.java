@@ -11,6 +11,7 @@ public class World {
 	int[] vetor = {0,45,90,135,180,225,270,315,360,405,450,495,540,585,630};
 	public static Position[] pos = new Position[]{pose(90,0),pose(540,0),pose(0,90),pose(0,540),pose(90,630),pose(540,630),pose(630,540),pose(630,90)};
 	public static List<Position> pos1 = new ArrayList<>(Arrays.asList(pos));
+	public static List<Position> pos2 = new ArrayList<>(Arrays.asList(pos));
 	
 	public World() {
 				inicializar();

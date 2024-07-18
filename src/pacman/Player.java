@@ -2,6 +2,7 @@ package pacman;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Timer;
 
 @SuppressWarnings("serial")
 public class Player extends Rectangle{
@@ -13,29 +14,26 @@ public class Player extends Rectangle{
 	public int frame_left=0, target_left=10;
 	public int dir=1;
 	public Position player_position;
+	Timer timer = new Timer();
 	
 	public Player(int x, int y) {
 		super(x,y,45,45);
 	}
 	
+	public boolean temp() {
+		//long time = System.currentTimeMillis();
+		//long time2 = System.currentTimeMillis()-time;
+		  return true;
+	}
+	
 	public Position range(int a, int b) {
 		Position p = new Position(a,b);
-		if(right) {
-			a+=45;
-		}
-		if(left) {
-			a-=45;
-		}
-		if(up) {
-			b-=45;
-		}
-		if(down) {
-			b+=45;
-		}
+		if(right && temp()==true) {a+=45;}
+		if(left && temp()==true) {a-=45;}
+		if(up && temp()==true) {b-=45;}
+		if(down && temp()==true) {b+=45;}
 		boolean question = World.tile(a, b);
-		if(question) {
-		p = new Position(a,b);
-		}
+		if(question) {p = new Position(a,b);}
 		return p;
 	}
 	
@@ -43,6 +41,16 @@ public class Player extends Rectangle{
 		Position pp = range(x,y);
 		x=pp.x;
 		y=pp.y;
+		if(x==0) {
+			x=630;
+		}else if(x==630) {
+			x=0;
+		}
+		if(y==0) {
+			y=630;
+		}else if(y==630) {
+			y=0;
+		}
 	}
 	
 	public void anima() {

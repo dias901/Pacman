@@ -25,6 +25,14 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		world = new World();
 	}
 	
+	public synchronized void start() {
+		
+	}
+	
+	public synchronized void stop() {
+		
+	}
+	
 	public void render() {
 		BufferStrategy bs = this.getBufferStrategy();
 		if (bs == null) {
@@ -65,18 +73,17 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	@Override
 	public void run() {
 		requestFocus();
-		
+	
 		while (true) {
-			render();
 			tick();
+			render();
 			
 			try {
-				Thread.sleep(1000/60);
-			} catch (InterruptedException e) {
+				Thread.sleep(10000/80);
+			}catch(InterruptedException e) {
 				e.printStackTrace();
 			}
-	}
-
+		}	
 }
 
 	@Override
