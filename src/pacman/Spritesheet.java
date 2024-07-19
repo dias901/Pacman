@@ -11,11 +11,14 @@ public class Spritesheet {
 	public static BufferedImage[] player_left;
 	public static BufferedImage parede;
 	public static BufferedImage tile;
+	public static BufferedImage inimigo;
 	
 	public Spritesheet() {
 		try {
 			parede = ImageIO.read(getClass().getResource("/parede.png"));
 			tile = ImageIO.read(getClass().getResource("/Tile.png"));
+			
+			inimigo = ImageIO.read(getClass().getResource("/ghost1.png"));
 			
 			player_right = new BufferedImage[2];
 			player_right[0] = ImageIO.read(getClass().getResource("/pacman1.png"));

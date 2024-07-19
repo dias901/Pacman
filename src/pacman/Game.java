@@ -16,21 +16,16 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	public static int WIDTH = 675, HEIGHT = 675;
 	public static Player player;
 	public static World world;
+	public static Inimigo inimigo,inimigo2;
 	
 	public Game() {
 		this.addKeyListener(this);
 		this.setPreferredSize(new Dimension(WIDTH,HEIGHT));
 		new Spritesheet();
-		player = new Player(45,45);
+		player = new Player(315,315);
+		inimigo = new Inimigo(45,45);
+		inimigo2 = new Inimigo(585,585);
 		world = new World();
-	}
-	
-	public synchronized void start() {
-		
-	}
-	
-	public synchronized void stop() {
-		
 	}
 	
 	public void render() {
@@ -46,12 +41,16 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 		world.render(g);
 		player.render(g);
+		inimigo.render(g);
+		inimigo2.render(g);
 		
 		bs.show();
 	}
 	
 	public void tick() {
 		player.tick();
+		inimigo.tick();
+		inimigo2.tick();
 	}
 	
 	
@@ -67,7 +66,8 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		frame.setVisible(true);
 		frame.setResizable(false);
 		
-		new Thread(game).start();
+		Thread t1 = new Thread(game);
+		t1.start();
 	}
 
 	@Override
